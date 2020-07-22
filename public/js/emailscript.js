@@ -5,6 +5,11 @@ function good() {
 }           
 good();
 
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+};
+
 let subEmail = document.getElementById('subEmail'); 
 let subBtn = document.getElementById('subBtn');
 let subError = document.getElementById("subError");
@@ -20,7 +25,16 @@ function removeError() {
        if(this.subEmail.value == null || this.subEmail.value == "") {
            subError.classList.add('hideForm');
            setTimeout( removeError , 2000);
-       } else {
+           return;
+       } else { 
+            const emailValidity = validateEmail(this.subEmail.value);
+            if(emailValidity != true) {
+                console.log('email is not valid')
+                subBtn.innerHTML = " invalid email";
+                return;
+            }
+
+            console.log(' i am a smart boy');
            
            let subData = {
                method: "POST",
@@ -28,17 +42,17 @@ function removeError() {
                headers: {'Content-Type':'application/json'}
            }
 
-           fetch('/emailSub', subData)
-               .then(res => {
-                   alert('subscribed');
-                   subAlert.classList.add("hideForm");
-                   if(res.ok) {
-                       console.log('yaaaayyy');
-                   } else {
-                       alert('no response!');
-                       console.log(" we are here!");
-                       subAlert.classList.add('errortAnim');
-                   }
-               });
+        //    fetch('/emailSub', subData)
+        //        .then(res => {
+        //            alert('subscribed');
+        //            subAlert.classList.add("hideForm");
+        //            if(res.ok) {
+        //                console.log('yaaaayyy');
+        //            } else {
+        //                alert('no response!');
+        //                console.log(" we are here!");
+        //                subAlert.classList.add('errortAnim');
+        //            }
+        //        });
        }
    });

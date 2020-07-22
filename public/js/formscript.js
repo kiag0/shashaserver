@@ -37,6 +37,10 @@
 
             // contact form script
             console.log("script is running");
+            function validateEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            };
             
             let contactBtn = document.getElementById("cBtn");
             contactBtn.addEventListener('click', (event)=> {
@@ -56,7 +60,21 @@
 
                 let contactForm = document.getElementById('contactForm');
 
-                console.log('i am sad '+ descriptionValue);
+                let emailValidity = validateEmail(cEmail);
+
+                if (emailValidity != true) {
+
+                    console.log('email is not valid')
+                    contactBtn.innerHTML = " invalid email!";
+                    return;
+                }
+
+                console.log(inquiry.length);
+                if (inquiry.length > 1500) {
+                    console.log('Inquiry too long')
+                    contactBtn.innerHTML = " Inquiry too long!";
+                return;
+                }
 
                   let xubData = {
                          method: "POST",
@@ -66,6 +84,7 @@
 
                 fetch('/contactForm', xubData)
                         .then(res => {
+                            contactBtn.innerHTML = "SENT!"
                             contactForm.classList.add('hideForm');
                             if(res.okay) {
                                 console.log('yaaaayyy');

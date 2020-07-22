@@ -25,16 +25,18 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.use(cors());
-mongoose
-  .connect(
-    "mongodb+srv://agusto:agusto@valentine-bv3vp.mongodb.net/hymns?retryWrites=true&w=majority" // mongodb url
-  )
-  .then(() => {
-    console.log("Connected to database!");
-  })
-  .catch(() => {
-    console.log("Connection failed!");
-  });
+// mongoose
+//   .connect(
+//     "mongodb+srv://agusto:agusto@valentine-bv3vp.mongodb.net/hymns?retryWrites=true&w=majority" // mongodb url
+//   )
+//   .then(() => {
+//     console.log("Connected to database!");
+//   })
+//   .catch(() => {
+//     console.log("Connection failed!");
+//   });
+
+console.log('app running!');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -5455,7 +5455,7 @@ a.close.disabled {
   top: 0;
   left: 0;
   z-index: 1040;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #000;
 }
@@ -10075,7 +10075,7 @@ header.masthead {
     text-align: center;
     padding: 20px;
     position: absolute;
-    bottom: -17px;
+    bottom: 0px;
     
 }
 
@@ -10521,8 +10521,8 @@ input:required, textarea:required {
 }
 
 body {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 .left {
@@ -10655,12 +10655,15 @@ footer ul li{
 .bottomBox {
   color: white;
   background: black;
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
   height: 50vh;
 }
+
 
 .Rcol {
   width: 40%;
@@ -10671,6 +10674,7 @@ footer ul li{
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  
 
 }
 
@@ -10737,7 +10741,7 @@ footer ul li{
     color: white;
     background: black;
     display: flex !important;
-    height: 50vh;
+    height: auto;
   
   }
 
@@ -10782,4 +10786,26 @@ footer ul li{
   width: 40%;
   object-fit: contain;
   height: 80%;
+}
+
+
+
+/* frame alignment */
+*{
+  max-width: 100%;
+
+}
+
+html {
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  max-width: 100%;
+}
+
+nav {
+  width: 100%;
+  max-width: 100%;
 }

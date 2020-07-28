@@ -10046,13 +10046,88 @@ header {
   width: 100%;
   height: 100%;
   margin-top: 1%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.0);
 }
 
 #mainNav {
   background: rgba(0, 0, 0, 0.2);
 
 }
+
+@media(max-width:992px) {
+        .navbar-collapse {
+          background-color: white;
+        }
+        .collapse {
+          background: white;
+        }
+        .show {
+          background-color: white;
+        }
+
+        #navbarResponsive {
+          background-color: white;
+        }
+        .nav-link {
+          margin-left: 10%;
+        }
+        .overlay {
+          background-color: rgba(0, 0, 0, 0.0);
+        }
+        .masthead {
+          background-color: rgba(0, 0, 0, 0.0);
+        }
+
+        *{
+          max-width: 100%;
+        
+        }
+        
+        html {
+          max-width: 100%;
+          width: 100%;
+        }
+        
+        body {
+          max-width: 100%;
+        }
+
+        .nav {
+          width: 100%;
+          max-width: 100%;
+        }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+  .masthead {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+
+
+ }
+
+ @media only screen and (min-width: 1199.1px) {
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    
+  }
+
+  .masthead {
+    /* background-color: rgba(0, 0, 0, 0.2) !important; */
+
+  }
+
+
+}
+ 
+
 
 header.masthead {
   padding-top: 10rem;
@@ -10809,3 +10884,9 @@ nav {
   width: 100%;
   max-width: 100%;
 }
+
+.dbutton {
+  color: black;
+  background-color: white;
+}
+

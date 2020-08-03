@@ -593,8 +593,10 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  justify-content: center;
+  /* align-items: center; */
+  /* margin-right: -15px;
+  margin-left: -15px; */
 }
 
 .no-gutters {
@@ -10050,6 +10052,7 @@ header {
 }
 
 #mainNav {
+
   background: rgba(0, 0, 0, 0.2);
 
 }
@@ -10243,8 +10246,38 @@ header.masthead h1 {
   pointer-events: default;
 }
 
+
+
 @media(max-width: 1000px) {
   .logoimg {
+    display: none;
+    
+  }
+
+  .logoimg2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .logoimg {
+    display: none;
+  }
+
+
+  .logoimg2 {
+
+    width: 10vw;
+    height:8vh;
+    cursor: pointer;
+    pointer-events: default;
+    
+  }
+
+}
+
+@media(min-width: 1200px) {
+  .logoimg2 {
     display: none;
     
   }
@@ -10514,6 +10547,7 @@ input:required, textarea:required {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .teamBox {

@@ -10891,11 +10891,25 @@ footer ul li{
   align-items: center;
 }
 
-.report img {
-  width: 40%;
-  object-fit: contain;
-  height: 80%;
+.rp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.report .rp img {
+  width: 30%;
+  object-fit: contain;
+  height: 70%;
+}
+
+.rp a {
+  margin-top: -10px;
+  color: #e83e8c;
+}
+
+
+
 
 
 

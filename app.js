@@ -14,6 +14,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const request = require('request');
 const nodemailer = require('nodemailer');
+const pick = require('node-fetch');
 
 
 
@@ -62,10 +63,45 @@ app.use((req, res, next) => {
 
 // set up the main route in the app
 app.get('/', function (req, res) {
-  res.render('home');
+ 
+res.render('home');
+
 });
 
+
+// app.get('/shop', (req,res) =>{
+//   console.log('see me!');
+//   const query = `{ 
+//     products (first: 10) {
+//       edges{
+//         node{
+//           title
+//         }
+//       }
+//     }
+//  }`;
+
+//  function apiCall(query) {
+//   return pick('https://www.tishalabeautykenya.com/api/2019-07/graphql.json', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/graphql',
+//       'Accept': 'application/json',
+//       'Access-Control-Origin': '*',
+//       'X-Shopify-Storefront-Access-Token': '7109ab90d57bb27e67d35eec2d7dea94'
+//     },
+//     'body': query
+//   }).then(response =>  response.json());
+// }
+
+//  apiCall(query).then(response => {
+//   console.log('i ran');
+//   console.dir(response);
+// });
+// })
+
 app.post('/emailSub', (req,res)=> {
+  
   console.log("'duuuuuuuuuudeeeee'");
 
   const {email, js} = req.body;
@@ -154,6 +190,7 @@ app.post('/contactForm', (req, res) => {
 //nodemailer stuff!
 
 
+app.post('/shopify');
 
 
 
